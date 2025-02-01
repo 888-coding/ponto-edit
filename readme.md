@@ -4,7 +4,7 @@
 
 Para minha necessidade de preencher dados para o arquivo excel de forma mais rápida.
 
-O arquivo de excel é um arquivo de Folha de ponto de funcionário. 
+O arquivo de excel é um arquivo de \_Folha de ponto\_ de funcionário. 
 
 A grande vantagem é para preencher rapidamente, e não utilizar ":" (dois pontos)
 
