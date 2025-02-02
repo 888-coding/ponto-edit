@@ -61,13 +61,13 @@ if sheetNome in nome_planilhas:
 
 		print(f"Voce digitou: Entrada: {horas01}:{minutos01}, Almoço: {horas02}:{minutos02}, Volta almoço: {horas03}:{minutos03}, Saída: {horas04}:{minutos04}")
 		campo = 'B' + str(linha)
-		sh[campo].value = time(horas01,minutos01,00)
+		sh[campo].value = time(int(horas01),int(minutos01),00)
 		campo = 'C' + str(linha)
-		sh[campo].value = time(horas02,minutos02,00)
+		sh[campo].value = time(int(horas02),int(minutos02),00)
 		campo = 'D' + str(linha)
-		sh[campo].value = time(horas03,minutos03,00)
+		sh[campo].value = time(int(horas03),int(minutos03),00)
 		campo = 'E' + str(linha)
-		sh[campo].value = time(horas04,minutos04,00)
+		sh[campo].value = time(int(horas04),int(minutos04),00)
 		wb.save(nome_arquivo)
 else:
 	print(Fore.RED + "Nome errado" + Fore.RESET)
