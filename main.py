@@ -1,8 +1,10 @@
 # main.py
 import os 
 import openpyxl 
+from datetime import time 
 import colorama 
 from colorama import Fore 
+
 
 #01: Procurar o arquivo 
 nome_arquivo = "file.xlsx"
@@ -25,3 +27,10 @@ if desejaAlterarData == "S":
 	sheet['B2'].value = novoAno	
 	arquivo.save(nome_arquivo)
 	print(Fore.GREEN + "Gravado com sucesso, abra de novo para alterar." + Fore.RESET)
+
+
+#B2 Inserir um valor de horas:minutos 
+sheet = arquivo['PEDRO']
+sheet['B2'].value = time(9,00,00)
+arquivo.save(nome_arquivo)
+
