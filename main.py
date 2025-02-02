@@ -30,7 +30,7 @@ if desejaAlterarData == "S":
 
 
 #B2 Inserir um valor de horas:minutos 
-sheet = arquivo['PEDRO']
-sheet['B2'].value = time(9,00,00)
-arquivo.save(nome_arquivo)
+#sheet = arquivo['PEDRO']
+#sheet['B2'].value = time(9,00,00)
+#arquivo.save(nome_arquivo)
 
