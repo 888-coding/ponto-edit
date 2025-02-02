@@ -12,9 +12,9 @@ nome_arquivo = "file.xlsx"
 diretorio_atual = os.path.dirname(os.path.realpath(__file__))
 
 #01.02 Abrir arquivo 
-arquivo = openpyxl.load_workbook(nome_arquivo)
+wb = openpyxl.load_workbook(nome_arquivo)
 #01.03 Abrir nomes das planilhas
-todas_planilhas = arquivo.sheetnames
+todas_planilhas = wb.sheetnames
 #01.END Arquivo encontrado 
 print(Fore.GREEN + "Bem vindo ao sistema" + Fore.RESET)
 #02: Alterar data
@@ -22,10 +22,10 @@ desejaAlterarData = input(Fore.YELLOW + "Deseja corrigir a o mes e ano ? (S/N)  
 if desejaAlterarData == "S":
 	novoMes = int(input("Favor digite o mês : "))
 	novoAno = int(input("Favor digite o ano : "))
-	sheet = arquivo['DATA']
-	sheet['B1'].value = novoMes
-	sheet['B2'].value = novoAno	
-	arquivo.save(nome_arquivo)
+	sh = wb['DATA']
+	sh['B1'].value = novoMes
+	sh['B2'].value = novoAno	
+	wb.save(nome_arquivo)
 	print(Fore.GREEN + "Gravado com sucesso, abra de novo para alterar." + Fore.RESET)
 
 
@@ -34,3 +34,17 @@ if desejaAlterarData == "S":
 #sheet['B2'].value = time(9,00,00)
 #arquivo.save(nome_arquivo)
 
+#03: Procurar a planilha do nome 
+sheetNome = input("Nome: ").upper()
+
+nome_planilhas = wb.sheetnames
+
+if sheetNome in nome_planilhas:
+	print(Fore.GREEN + "Encontrado" + Fore.RESET)
+	sh = wb[sheetNome]
+	lista = ['B', 'C', 'D', 'E']
+	for letra in lista:
+		print(letra)
+	 
+else:
+	print(Fore.RED + "Nome errado" + Fore.RESET)
