@@ -42,9 +42,24 @@ nome_planilhas = wb.sheetnames
 if sheetNome in nome_planilhas:
 	print(Fore.GREEN + "Encontrado" + Fore.RESET)
 	sh = wb[sheetNome]
-	lista = ['B', 'C', 'D', 'E']
-	for letra in lista:
-		print(letra)
-	 
+	for linha in range(2, 33):
+		#lista = ['B', 'C', 'D', 'E']
+		campo = 'A' + str(linha)
+		print(f"{sh[campo].value}")
+		print(Fore.GREEN + "Entrada :" + Fore.RESET)
+		horas01 = input("Horas : ")
+		minutos01 = input("Minutos : ")
+		print(Fore.GREEN + "Almoço :" + Fore.RESET)
+		horas02 = input("Horas : ")
+		minutos02 = input("Minutos : ")
+		print(Fore.GREEN + "Volta almoço :" + Fore.RESET)
+		horas03 = input("Horas : ")
+		minutos03 = input("Minutos : ")
+		print(Fore.GREEN + "Saída :" + Fore.RESET)
+		horas04 = input("Horas : ")
+		minutos04 = input("Minutos : ")
+
+		print(f"Voce digitou: Entrada: {horas01}:{minutos01}, Almoço: {horas02}:{minutos02}, Volta almoço: {horas03}:{minutos03}, Saída: {horas04}:{minutos04}")
+		
 else:
 	print(Fore.RED + "Nome errado" + Fore.RESET)
