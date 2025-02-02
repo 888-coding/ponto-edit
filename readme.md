@@ -14,3 +14,4 @@ Creio que não será um projeto demorado.
 
 Até
 
+Fiz até 10: 36 am (nao trabalhei a noite)
