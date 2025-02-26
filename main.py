@@ -13,7 +13,7 @@ diretorio_atual = os.path.dirname(os.path.realpath(__file__))
 
 #01.02 Abrir arquivo 
 wb = openpyxl.load_workbook(nome_arquivo)
-#01.03 Abrir nomes das planilhas
+#01.03 Abrir nomes das planilhas.
 todas_planilhas = wb.sheetnames
 #01.END Arquivo encontrado 
 print(Fore.GREEN + "Bem vindo ao sistema" + Fore.RESET)
