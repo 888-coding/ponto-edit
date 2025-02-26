@@ -15,3 +15,7 @@ Creio que não será um projeto demorado.
 Até
 
 Fiz até 10: 36 am (nao trabalhei a noite)
+
+## 26/02/2025 
+Atualização 
+* Desejo alterar para que possa alterar os dados de horas que foi colocado no dia. 
