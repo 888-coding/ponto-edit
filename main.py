@@ -47,7 +47,18 @@ if sheetNome in nome_planilhas:
 		campo = 'A' + str(linha)
 		print(f"Dia : {sh[campo].value}")
 		print("**Entrada")
-		horas01 = input("Horas : ")
+		# Teste Começo 
+		while True: 
+			horas01 = input("Horas : ")
+			if horas01.isnumeric():
+				if int(horas01) >= 0 and int(horas01) <= 100:
+					break
+				else:
+					print(Fore.RED + "Erro!" + Fore.RESET)
+			else:
+				print(Fore.RED + "Erro!" + Fore.RESET)
+		# Teste Fim 
+		#horas01 = input("Horas : ")
 		minutos01 = input("Minutos : ")
 		print("**Almoço")
 		horas02 = input("Horas : ")
