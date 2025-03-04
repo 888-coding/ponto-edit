@@ -47,7 +47,7 @@ if sheetNome in nome_planilhas:
 		campo = 'A' + str(linha)
 		print(f"Dia : {sh[campo].value}")
 		print("**Entrada")
-		# Teste Começo 
+		# Campo de Entrada : Horas 
 		while True: 
 			horas01 = input("Horas : ")
 			if horas01.isnumeric():
@@ -57,18 +57,79 @@ if sheetNome in nome_planilhas:
 					print(Fore.RED + "Erro!" + Fore.RESET)
 			else:
 				print(Fore.RED + "Erro!" + Fore.RESET)
-		# Teste Fim 
-		#horas01 = input("Horas : ")
-		minutos01 = input("Minutos : ")
+		# Campo de Entrada : Minutos 
+		while True:
+			minutos01 = input("Minutos : ")
+			if minutos01.isnumeric():
+				if int(minutos01) >= 0 and int(minutos01) <= 100:
+					break
+				else:
+					print(Fore.RED + "Erro!" + Fore.RESET)
+			else:
+				print(Fore.RED + "Erro!" + Fore.RESET)
 		print("**Almoço")
-		horas02 = input("Horas : ")
-		minutos02 = input("Minutos : ")
+		# Campo de Almoço : Horas
+		while True:
+			horas02 = input("Horas : ")
+			if horas02.isnumeric():
+				if int(horas02) >= 0 and int(horas02) <= 100:
+					break
+				else:
+					print(Fore.RED + "Erro!" + Fore.RESET)
+			else:
+				print(Fore.RED + "Erro!" + Fore.RESET)
+		# Campo de Almoço : Minutos 
+		while True:
+			minutos02 = input("Minutos : ")
+			if minutos02.isnumeric():
+				if int(minutos02) >= 0 and int(minutos02) <= 100:
+					break
+				else:
+					print(Fore.RED + "Erro!" + Fore.RESET)
+			else:
+				print(Fore.RED + "Erro!" + Fore.RESET)
 		print("**Volta almoço")
-		horas03 = input("Horas : ")
-		minutos03 = input("Minutos : ")
+		# Campo de Volta de almoço : Horas
+		while True:
+			horas03 = input("Horas : ")
+			if horas03.isnumeric():
+				if int(horas03) >= 0 and int(horas03) <= 100:
+					break
+				else:
+					print(Fore.RED + "Erro!" + Fore.RESET)
+			else:
+				print(Fore.RED + "Erro!" + Fore.RESET)
+		# Campo de Volta de almoço : Minutos 
+		while True:
+			minutos03 = input("Minutos : ")
+			if minutos03.isnumeric():
+				if int(minutos03) >= 0 and int(minutos03) <= 100:
+					break
+				else:
+					print(Fore.RED + "Erro!" + Fore.RESET)
+			else:
+				print(Fore.RED + "Erro!" + Fore.RESET)
 		print("**Saída")
-		horas04 = input("Horas : ")
-		minutos04 = input("Minutos : ")
+		# Campo de Saída : Horas 
+		while True:
+			horas04 = input("Horas : ")
+			if horas04.isnumeric():
+				if int(horas04) >= 0 and int(horas04) <= 100:
+					break
+				else:
+					print(Fore.RED + "Erro!" + Fore.RESET)
+			else:
+				print(Fore.RED + "Erro!" + Fore.RESET)
+		# Campo de Saída : Minutos
+		while True:
+			minutos04 = input("Minutos : ")
+			if minutos04.isnumeric():
+				if int(minutos04) >= 0 and int(minutos04) <= 100:
+					break
+				else:
+					print(Fore.RED + "Erro!" + Fore.RESET)
+			else:
+				print(Fore.RED + "Erro!" + Fore.RESET)
 
 		print(Fore.GREEN + f"Voce digitou: Entrada: {horas01}:{minutos01}, Almoço: {horas02}:{minutos02}, Volta almoço: {horas03}:{minutos03}, Saída: {horas04}:{minutos04}" + Fore.RESET)
 		if int(horas01) != 0:
