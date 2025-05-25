@@ -22,5 +22,8 @@ Atualização
 
 ## 25/05/2025
 To-do list 
-* Poder corrigir a data.
-* Continuar a partir de alguma data
+* 可以更改時間.
+* 如果沒有做完,可以在繼續
+
+### 如何做?
+* 儲存的時候是不是要換方法儲存?
