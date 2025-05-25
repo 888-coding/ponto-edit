@@ -29,7 +29,7 @@ if desejaAlterarData == "S":
 	print(Fore.GREEN + "Gravado com sucesso, abra de novo para alterar." + Fore.RESET)
 
 
-#B2 Inserir um valor de horas:minutos 
+#B2 插入 時間 小時 和 分鐘 
 #sheet = arquivo['PEDRO']
 #sheet['B2'].value = time(9,00,00)
 #arquivo.save(nome_arquivo)

@@ -19,3 +19,8 @@ Fiz até 10: 36 am (nao trabalhei a noite)
 ## 26/02/2025 
 Atualização 
 * Desejo alterar para que possa alterar os dados de horas que foi colocado no dia. 
+
+## 25/05/2025
+To-do list 
+* Poder corrigir a data.
+* Continuar a partir de alguma data
