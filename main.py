@@ -131,6 +131,7 @@ if sheetNome in nome_planilhas:
 			else:
 				print(Fore.RED + "Erro!" + Fore.RESET)
 
+		# 顯示所寫的時間
 		print(Fore.GREEN + f"Voce digitou: Entrada: {horas01}:{minutos01}, Almoço: {horas02}:{minutos02}, Volta almoço: {horas03}:{minutos03}, Saída: {horas04}:{minutos04}" + Fore.RESET)
 		if int(horas01) != 0:
 			campo = 'B' + str(linha)
