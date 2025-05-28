@@ -44,14 +44,15 @@ if sheetNome in nome_planilhas:
 		# 列表分為4行: B,C,D,E 
 		# 分別為 上班時間, 吃飯時間, 吃飯回來時間, 下班時間
 		# lista = ['B', 'C', 'D', 'E']
+		# Entrance, Exit, 
 		campo = 'A' + str(linha)
 		print(f"Dia : {sh[campo].value}")
 		print("**Entrada")
 		# 進來時間 (小時) 
 		while True: 
-			horas01 = input("Horas : ")
-			if horas01.isnumeric():
-				if int(horas01) >= 0 and int(horas01) <= 100:
+			horas_entrada = input("Horas : ")
+			if horas_entrada.isnumeric():
+				if int(horas_entrada) >= 0 and int(horas_entrada) <= 100:
 					break
 				else:
 					print(Fore.RED + "Erro!" + Fore.RESET)
@@ -59,9 +60,9 @@ if sheetNome in nome_planilhas:
 				print(Fore.RED + "Erro!" + Fore.RESET)
 		# 進來時間 (分鐘) 
 		while True:
-			minutos01 = input("Minutos : ")
-			if minutos01.isnumeric():
-				if int(minutos01) >= 0 and int(minutos01) <= 100:
+			minutos_entrada = input("Minutos : ")
+			if minutos_entrada.isnumeric():
+				if int(minutos_entrada) >= 0 and int(minutos_entrada) <= 100:
 					break
 				else:
 					print(Fore.RED + "Erro!" + Fore.RESET)
@@ -70,9 +71,9 @@ if sheetNome in nome_planilhas:
 		print("**Almoço")
 		# 吃飯時間 (小時)
 		while True:
-			horas02 = input("Horas : ")
-			if horas02.isnumeric():
-				if int(horas02) >= 0 and int(horas02) <= 100:
+			horas_saida_almoco = input("Horas : ")
+			if horas_saida_almoco.isnumeric():
+				if int(horas_saida_almoco) >= 0 and int(horas_saida_almoco) <= 100:
 					break
 				else:
 					print(Fore.RED + "Erro!" + Fore.RESET)
@@ -80,9 +81,9 @@ if sheetNome in nome_planilhas:
 				print(Fore.RED + "Erro!" + Fore.RESET)
 		# 吃飯時間 (分鐘) 
 		while True:
-			minutos02 = input("Minutos : ")
-			if minutos02.isnumeric():
-				if int(minutos02) >= 0 and int(minutos02) <= 100:
+			minutos_saida_almoco = input("Minutos : ")
+			if minutos_saida_almoco.isnumeric():
+				if int(minutos_saida_almoco) >= 0 and int(minutos_saida_almoco) <= 100:
 					break
 				else:
 					print(Fore.RED + "Erro!" + Fore.RESET)
@@ -91,9 +92,9 @@ if sheetNome in nome_planilhas:
 		print("**Volta almoço")
 		# 吃飯回來時間 (小時)
 		while True:
-			horas03 = input("Horas : ")
-			if horas03.isnumeric():
-				if int(horas03) >= 0 and int(horas03) <= 100:
+			horas_volta_almoco = input("Horas : ")
+			if horas_volta_almoco.isnumeric():
+				if int(horas_volta_almoco) >= 0 and int(horas_volta_almoco) <= 100:
 					break
 				else:
 					print(Fore.RED + "Erro!" + Fore.RESET)
@@ -101,9 +102,9 @@ if sheetNome in nome_planilhas:
 				print(Fore.RED + "Erro!" + Fore.RESET)
 		# 吃飯回來時間 (分鐘) 
 		while True:
-			minutos03 = input("Minutos : ")
-			if minutos03.isnumeric():
-				if int(minutos03) >= 0 and int(minutos03) <= 100:
+			minutos_volta_almoco = input("Minutos : ")
+			if minutos_volta_almoco.isnumeric():
+				if int(minutos_volta_almoco) >= 0 and int(minutos_volta_almoco) <= 100:
 					break
 				else:
 					print(Fore.RED + "Erro!" + Fore.RESET)
@@ -112,9 +113,9 @@ if sheetNome in nome_planilhas:
 		print("**Saída")
 		# 下班時間 (小時) 
 		while True:
-			horas04 = input("Horas : ")
-			if horas04.isnumeric():
-				if int(horas04) >= 0 and int(horas04) <= 100:
+			horas_saida = input("Horas : ")
+			if horas_saida.isnumeric():
+				if int(horas_saida) >= 0 and int(horas_saida) <= 100:
 					break
 				else:
 					print(Fore.RED + "Erro!" + Fore.RESET)
@@ -122,9 +123,9 @@ if sheetNome in nome_planilhas:
 				print(Fore.RED + "Erro!" + Fore.RESET)
 		# 下班時間 (分鐘)
 		while True:
-			minutos04 = input("Minutos : ")
-			if minutos04.isnumeric():
-				if int(minutos04) >= 0 and int(minutos04) <= 100:
+			minutos_saida = input("Minutos : ")
+			if minutos_saida.isnumeric():
+				if int(minutos_saida) >= 0 and int(minutos_saida) <= 100:
 					break
 				else:
 					print(Fore.RED + "Erro!" + Fore.RESET)
@@ -132,16 +133,16 @@ if sheetNome in nome_planilhas:
 				print(Fore.RED + "Erro!" + Fore.RESET)
 
 		# 顯示所寫的時間
-		print(Fore.GREEN + f"Voce digitou: Entrada: {horas01}:{minutos01}, Almoço: {horas02}:{minutos02}, Volta almoço: {horas03}:{minutos03}, Saída: {horas04}:{minutos04}" + Fore.RESET)
-		if int(horas01) != 0:
+		print(Fore.GREEN + f"Voce digitou: Entrada: {horas_entrada}:{minutos_entrada}, Almoço: {horas_saida_almoco}:{minutos_saida_almoco}, Volta almoço: {horas_volta_almoco}:{minutos_volta_almoco}, Saída: {horas_saida}:{minutos_saida}" + Fore.RESET)
+		if int(horas_entrada) != 0:
 			campo = 'B' + str(linha)
-			sh[campo].value = time(int(horas01),int(minutos01),00)
+			sh[campo].value = time(int(horas_entrada),int(minutos_entrada),00)
 			campo = 'C' + str(linha)
-			sh[campo].value = time(int(horas02),int(minutos02),00)
+			sh[campo].value = time(int(horas_saida_almoco),int(minutos_saida_almoco),00)
 			campo = 'D' + str(linha)
-			sh[campo].value = time(int(horas03),int(minutos03),00)
+			sh[campo].value = time(int(horas_volta_almoco),int(minutos_volta_almoco),00)
 			campo = 'E' + str(linha)
-			sh[campo].value = time(int(horas04),int(minutos04),00)
+			sh[campo].value = time(int(horas_saida),int(minutos_saida),00)
 			wb.save(nome_arquivo)
 else:
 	#沒有找到名字
