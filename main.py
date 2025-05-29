@@ -40,6 +40,8 @@ if sheetNome in nome_planilhas:
 	# 找到了名字
 	print(Fore.GREEN + "Encontrado" + Fore.RESET)
 	sh = wb[sheetNome]
+
+	# Looping 的開啟
 	for linha in range(2, 33):
 		# 列表分為4行: B,C,D,E 
 		# 分別為 上班時間, 吃飯時間, 吃飯回來時間, 下班時間
