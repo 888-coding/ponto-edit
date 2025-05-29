@@ -134,7 +134,15 @@ if sheetNome in nome_planilhas:
 
 		# 顯示所寫的時間
 		print(Fore.GREEN + f"Voce digitou: Entrada: {horas_entrada}:{minutos_entrada}, Almoço: {horas_saida_almoco}:{minutos_saida_almoco}, Volta almoço: {horas_volta_almoco}:{minutos_volta_almoco}, Saída: {horas_saida}:{minutos_saida}" + Fore.RESET)
-		if int(horas_entrada) != 0:
+
+		# 如果想要save請按 'S'
+		while True:
+			desejaSalvar = input("Deseja salvar o horário? (S/N) ").upper()
+			if desejaSalvar == "S" or desejaSalvar == "N":
+				break
+			else:
+				print("Escolha S ou N.")
+		if desejaSalvar == "S":
 			campo = 'B' + str(linha)
 			sh[campo].value = time(int(horas_entrada),int(minutos_entrada),00)
 			campo = 'C' + str(linha)
@@ -144,6 +152,19 @@ if sheetNome in nome_planilhas:
 			campo = 'E' + str(linha)
 			sh[campo].value = time(int(horas_saida),int(minutos_saida),00)
 			wb.save(nome_arquivo)
+			print(Fore.GREEN + "Gravado com sucesso" + Fore.RESET)
+
+		#if int(horas_entrada) != 0:
+		#	campo = 'B' + str(linha)
+		#	sh[campo].value = time(int(horas_entrada),int(minutos_entrada),00)
+		#	campo = 'C' + str(linha)
+		#	sh[campo].value = time(int(horas_saida_almoco),int(minutos_saida_almoco),00)
+		#	campo = 'D' + str(linha)
+		#	sh[campo].value = time(int(horas_volta_almoco),int(minutos_volta_almoco),00)
+		#	campo = 'E' + str(linha)
+		#	sh[campo].value = time(int(horas_saida),int(minutos_saida),00)
+		#	wb.save(nome_arquivo)
+		#	print(Fore.GREEN + "Gravado com sucesso" + Fore.RESET)
 else:
 	#沒有找到名字
 	print(Fore.RED + "Nome errado" + Fore.RESET)
