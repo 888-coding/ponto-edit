@@ -145,7 +145,7 @@ if sheetNome in nome_planilhas:
 		# 顯示所寫的時間
 		print(Fore.GREEN + f"Voce digitou: [ENTRADA: {horas_entrada}:{minutos_entrada}], [ALMOÇO: {horas_saida_almoco}:{minutos_saida_almoco}], [VOLTA ALMOCO: {horas_volta_almoco}:{minutos_volta_almoco}], [SAÍDA: {horas_saida}:{minutos_saida}]" + Fore.RESET)
 
-		# 如果想要save請按 'S'
+		# 如果想要save請按 '1'
 		while True:
 			desejaSalvar = input("Deseja salvar o horário? (Sim 1/Nao 0) ").upper()
 			if desejaSalvar == "1" or desejaSalvar == "0":
