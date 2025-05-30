@@ -151,7 +151,7 @@ if sheetNome in nome_planilhas:
 			if desejaSalvar == "1" or desejaSalvar == "0":
 				break
 			else:
-				print("Escolha S ou N.")
+				print("Escolha Sim 1 ou Nao 0")
 		if desejaSalvar == "1":
 			campo = 'B' + str(linha)
 			sh[campo].value = time(int(horas_entrada),int(minutos_entrada),00)
