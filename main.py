@@ -153,16 +153,20 @@ if sheetNome in nome_planilhas:
 			else:
 				print("Escolha Sim 1 ou Nao 0")
 		if desejaSalvar == "1":
-			campo = 'B' + str(linha)
-			sh[campo].value = time(int(horas_entrada),int(minutos_entrada),00)
-			campo = 'C' + str(linha)
-			sh[campo].value = time(int(horas_saida_almoco),int(minutos_saida_almoco),00)
-			campo = 'D' + str(linha)
-			sh[campo].value = time(int(horas_volta_almoco),int(minutos_volta_almoco),00)
-			campo = 'E' + str(linha)
-			sh[campo].value = time(int(horas_saida),int(minutos_saida),00)
-			wb.save(nome_arquivo)
-			print(Fore.GREEN + "Gravado com sucesso" + Fore.RESET)
+			# 如果上班時間是 0 點, 就不要錄任何資料
+			if int(horas_entrada) != 0:
+				campo = 'B' + str(linha)
+				sh[campo].value = time(int(horas_entrada),int(minutos_entrada),00)
+				campo = 'C' + str(linha)
+				sh[campo].value = time(int(horas_saida_almoco),int(minutos_saida_almoco),00)
+				campo = 'D' + str(linha)
+				sh[campo].value = time(int(horas_volta_almoco),int(minutos_volta_almoco),00)
+				campo = 'E' + str(linha)
+				sh[campo].value = time(int(horas_saida),int(minutos_saida),00)
+				wb.save(nome_arquivo)
+				print(Fore.GREEN + "Gravado com sucesso" + Fore.RESET)
+			else:
+				print(Fore.GREEN + "Pulamos este dia!" + Fore.RESET)
 
 else:
 	#沒有找到名字
