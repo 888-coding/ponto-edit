@@ -43,14 +43,14 @@ if sheetNome in nome_planilhas:
 	sh = wb[sheetNome]
 
 	# 從開始還是那一天填寫?
-	desejaContinuar = input("Deseja continuar? S/N : ").upper()
+	desejaContinuar = input("Deseja continuar em alguma data especifica ? S/N : ").upper()
 	if desejaContinuar == "S":
 		diaInicio = int(input("Digite o dia de inicio : "))
 	else:
 		diaInicio = 1
 	
 	diaInicio = diaInicio + 1
-	# Looping 的開啟 從第一天到最後一天
+	# Looping 的開啟 從第一天到三十一天
 	for linha in range(diaInicio, 33):
 		# 列表分為4行: B,C,D,E 
 		# 分別為 上班時間, 吃飯時間, 吃飯回來時間, 下班時間
