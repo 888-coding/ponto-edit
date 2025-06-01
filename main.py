@@ -15,7 +15,7 @@ todas_planilhas = wb.sheetnames
 print(Fore.GREEN + "Bem vindo ao sistema" + Fore.RESET)
 
 # 改日期
-desejaAlterarData = input(Fore.YELLOW + "Deseja corrigir a o mes e ano ? (S/N)  : " + Fore.RESET).upper()
+desejaAlterarData = input(Fore.YELLOW + "Deseja corrigir mes e ano ? (S/N)  : " + Fore.RESET).upper()
 if desejaAlterarData == "S":
 	novoMes = int(input("Favor digite o mês : "))
 	novoAno = int(input("Favor digite o ano : "))
