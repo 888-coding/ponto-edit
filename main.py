@@ -27,10 +27,6 @@ if desejaAlterarData == "S":
 	# 關閉程式
 	exit()
 
-#B2 插入時間(小時和分鐘) 
-#sheet = arquivo['PEDRO']
-#sheet['B2'].value = time(9,00,00)
-#arquivo.save(nome_arquivo)
 
 # 尋找名字 
 sheetNome = input("Nome: ").upper()
