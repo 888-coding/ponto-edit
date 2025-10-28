@@ -15,10 +15,10 @@ todas_planilhas = wb.sheetnames
 print(Fore.GREEN + "Bem vindo ao sistema" + Fore.RESET)
 
 # 改日期
-desejaAlterarData = input(Fore.YELLOW + "Deseja corrigir mes e ano ? (S/N)  : " + Fore.RESET).upper()
+desejaAlterarData = input(Fore.YELLOW + "Deseja corrigir mes e ano ? (S/N)  : " + Fore.RESET).upper().strip()
 if desejaAlterarData == "S":
-	novoMes = int(input("Favor digite o mês : "))
-	novoAno = int(input("Favor digite o ano : "))
+	novoMes = int(input("Favor digite o mês : ").strip())
+	novoAno = int(input("Favor digite o ano : ").strip())
 	sh = wb['DATA']
 	sh['B1'].value = novoMes
 	sh['B2'].value = novoAno	
@@ -29,7 +29,7 @@ if desejaAlterarData == "S":
 
 
 # 尋找名字 
-sheetNome = input("Nome: ").upper()
+sheetNome = input("Nome: ").upper().strip()
 
 nome_planilhas = wb.sheetnames
 
@@ -39,9 +39,9 @@ if sheetNome in nome_planilhas:
 	sh = wb[sheetNome]
 
 	# 從開始還是那一天填寫?
-	desejaContinuar = input("Deseja continuar em alguma data especifica ? S/N : ").upper()
+	desejaContinuar = input("Deseja continuar em alguma data especifica ? S/N : ").upper().strip()
 	if desejaContinuar == "S":
-		diaInicio = int(input("Digite o dia de inicio : "))
+		diaInicio = int(input("Digite o dia de inicio : ").strip())
 	else:
 		diaInicio = 1
 	
@@ -56,7 +56,7 @@ if sheetNome in nome_planilhas:
 		print("**Entrada")
 		# 進來時間 (小時) 
 		while True: 
-			horas_entrada = input("Horas : ")
+			horas_entrada = input("Horas : ").strip()
 			if horas_entrada.isnumeric():
 				if int(horas_entrada) >= 0 and int(horas_entrada) <= 100:
 					break
@@ -66,7 +66,7 @@ if sheetNome in nome_planilhas:
 				print(Fore.RED + "Erro!" + Fore.RESET)
 		# 進來時間 (分鐘) 
 		while True:
-			minutos_entrada = input("Minutos : ")
+			minutos_entrada = input("Minutos : ").strip()
 			if minutos_entrada.isnumeric():
 				if int(minutos_entrada) >= 0 and int(minutos_entrada) <= 100:
 					break
@@ -77,7 +77,7 @@ if sheetNome in nome_planilhas:
 		print("**Almoço")
 		# 吃飯時間 (小時)
 		while True:
-			horas_saida_almoco = input("Horas : ")
+			horas_saida_almoco = input("Horas : ").strip()
 			if horas_saida_almoco.isnumeric():
 				if int(horas_saida_almoco) >= 0 and int(horas_saida_almoco) <= 100:
 					break
@@ -87,7 +87,7 @@ if sheetNome in nome_planilhas:
 				print(Fore.RED + "Erro!" + Fore.RESET)
 		# 吃飯時間 (分鐘) 
 		while True:
-			minutos_saida_almoco = input("Minutos : ")
+			minutos_saida_almoco = input("Minutos : ").strip()
 			if minutos_saida_almoco.isnumeric():
 				if int(minutos_saida_almoco) >= 0 and int(minutos_saida_almoco) <= 100:
 					break
@@ -98,7 +98,7 @@ if sheetNome in nome_planilhas:
 		print("**Volta almoço")
 		# 吃飯回來時間 (小時)
 		while True:
-			horas_volta_almoco = input("Horas : ")
+			horas_volta_almoco = input("Horas : ").strip()
 			if horas_volta_almoco.isnumeric():
 				if int(horas_volta_almoco) >= 0 and int(horas_volta_almoco) <= 100:
 					break
@@ -108,7 +108,7 @@ if sheetNome in nome_planilhas:
 				print(Fore.RED + "Erro!" + Fore.RESET)
 		# 吃飯回來時間 (分鐘) 
 		while True:
-			minutos_volta_almoco = input("Minutos : ")
+			minutos_volta_almoco = input("Minutos : ").strip()
 			if minutos_volta_almoco.isnumeric():
 				if int(minutos_volta_almoco) >= 0 and int(minutos_volta_almoco) <= 100:
 					break
@@ -119,7 +119,7 @@ if sheetNome in nome_planilhas:
 		print("**Saída")
 		# 下班時間 (小時) 
 		while True:
-			horas_saida = input("Horas : ")
+			horas_saida = input("Horas : ").strip()
 			if horas_saida.isnumeric():
 				if int(horas_saida) >= 0 and int(horas_saida) <= 100:
 					break
@@ -129,7 +129,7 @@ if sheetNome in nome_planilhas:
 				print(Fore.RED + "Erro!" + Fore.RESET)
 		# 下班時間 (分鐘)
 		while True:
-			minutos_saida = input("Minutos : ")
+			minutos_saida = input("Minutos : ").strip()
 			if minutos_saida.isnumeric():
 				if int(minutos_saida) >= 0 and int(minutos_saida) <= 100:
 					break
@@ -143,7 +143,7 @@ if sheetNome in nome_planilhas:
 
 		# 如果想要save請按 '1'
 		while True:
-			desejaSalvar = input("Deseja salvar o horário? (Sim 1/Nao 0) ").upper()
+			desejaSalvar = input("Deseja salvar o horário? (Sim 1/Nao 0) ").upper().strip()
 			if desejaSalvar == "1" or desejaSalvar == "0":
 				break
 			else:
