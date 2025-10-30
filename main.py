@@ -141,6 +141,10 @@ if sheetNome in nome_planilhas:
 		# 顯示所寫的時間
 		print(Fore.GREEN + f"Voce digitou: [ENTRADA: {horas_entrada}:{minutos_entrada}], [ALMOÇO: {horas_saida_almoco}:{minutos_saida_almoco}], [VOLTA ALMOCO: {horas_volta_almoco}:{minutos_volta_almoco}], [SAÍDA: {horas_saida}:{minutos_saida}]" + Fore.RESET)
 
+		# 多少的吃飯時間 (分鐘)
+		tempo_de_almoco = (int(horas_volta_almoco) * 60 + int(minutos_volta_almoco)) - (int(horas_saida_almoco) * 60 + int(minutos_saida_almoco))
+		print(f"Tempo de almoço : {tempo_de_almoco} minutos ")
+
 		# 如果想要save請按 '1'
 		while True:
 			desejaSalvar = input("Deseja salvar o horário? (Sim 1/Nao 0) ").upper().strip()
@@ -160,6 +164,7 @@ if sheetNome in nome_planilhas:
 				campo = 'E' + str(linha)
 				sh[campo].value = time(int(horas_saida),int(minutos_saida),00)
 				wb.save(nome_arquivo)
+				os.system("cls")
 				print(Fore.GREEN + "Gravado com sucesso" + Fore.RESET)
 			else:
 				print(Fore.GREEN + "Pulamos este dia!" + Fore.RESET)
