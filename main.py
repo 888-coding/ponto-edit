@@ -143,7 +143,7 @@ if sheetNome in nome_planilhas:
 
 		# 多少的吃飯時間 (分鐘)
 		tempo_de_almoco = (int(horas_volta_almoco) * 60 + int(minutos_volta_almoco)) - (int(horas_saida_almoco) * 60 + int(minutos_saida_almoco))
-		print(f"Tempo de almoço : {tempo_de_almoco} minutos ")
+		print(f"\nTempo de almoço : {tempo_de_almoco} minutos ")
 
 		# 如果想要save請按 '1'
 		while True:
@@ -167,6 +167,7 @@ if sheetNome in nome_planilhas:
 				os.system("cls")
 				print(Fore.GREEN + "Gravado com sucesso" + Fore.RESET)
 			else:
+				os.system("cls")
 				print(Fore.GREEN + "Pulamos este dia!" + Fore.RESET)
 
 else:
