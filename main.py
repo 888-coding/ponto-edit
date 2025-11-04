@@ -2,8 +2,8 @@
 import os 
 import openpyxl 
 from datetime import time 
-import colorama 
 from colorama import Fore 
+import msvcrt
 
 # 程式開始, 尋找 excel 檔案, 檔案位子
 nome_arquivo = "file.xlsx"
@@ -15,10 +15,32 @@ todas_planilhas = wb.sheetnames
 print(Fore.GREEN + "Bem vindo ao sistema" + Fore.RESET)
 
 # 改日期
-desejaAlterarData = input(Fore.YELLOW + "Deseja corrigir mes e ano ? (S/N)  : " + Fore.RESET).upper().strip()
+# desejaAlterarData = input(Fore.YELLOW + "Deseja corrigir mes e ano ? (S/N)  : " + Fore.RESET).upper().strip()
+print("Deseja corrigir mes e ano ? ", end="", flush=True)
+desejaAlterarData = ""
+while len(desejaAlterarData) < 1:
+	char = msvcrt.getwch()
+	print(char, end="", flush=True)
+	desejaAlterarData += char.upper()
+
+print("\n")
 if desejaAlterarData == "S":
-	novoMes = int(input("Favor digite o mês : ").strip())
-	novoAno = int(input("Favor digite o ano : ").strip())
+	# novoMes = int(input("Favor digite o mês : ").strip())
+	print("Mes : ", end="", flush=True)
+	inputMes = ""
+	while len(inputMes) < 2:
+		char = msvcrt.getwch()
+		print(char, end="", flush=True)
+		inputMes += char
+	novoMes = int(inputMes)
+	print("\nAno: ", end="", flush=True)
+	# novoAno = int(input("Favor digite o ano : ").strip())
+	inputAno = ""
+	while len(inputAno) < 4:
+		char = msvcrt.getwch()
+		print(char, end="", flush=True)
+		inputAno += char
+	novoAno = int(inputAno)
 	sh = wb['DATA']
 	sh['B1'].value = novoMes
 	sh['B2'].value = novoAno	
