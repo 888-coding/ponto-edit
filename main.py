@@ -20,6 +20,8 @@ print("Deseja corrigir mes e ano ? ", end="", flush=True)
 desejaAlterarData = ""
 while len(desejaAlterarData) < 1:
 	char = msvcrt.getwch()
+	if char == "\x1b":
+		exit()
 	print(char, end="", flush=True)
 	desejaAlterarData += char.upper()
 
@@ -45,6 +47,7 @@ if desejaAlterarData == "S":
 	sh['B1'].value = novoMes
 	sh['B2'].value = novoAno	
 	wb.save(nome_arquivo)
+	print("\n")
 	print(Fore.GREEN + "Gravado com sucesso, abra de novo para alterar." + Fore.RESET)
 	# 關閉程式
 	exit()
@@ -61,9 +64,25 @@ if sheetNome in nome_planilhas:
 	sh = wb[sheetNome]
 
 	# 從開始還是那一天填寫?
-	desejaContinuar = input("Deseja continuar em alguma data especifica ? S/N : ").upper().strip()
+	# desejaContinuar = input("Deseja continuar em alguma data especifica ? S/N : ").upper().strip()
+	print("\nDeseja continuar em alguma data especifica? S/N : ", end="", flush=True)
+	inputDesejaContinuar = ""
+	while len(inputDesejaContinuar) < 1:
+		char = msvcrt.getwch()
+		if char == "\x1b":
+			exit()
+		print(char, end="", flush=True)
+		inputDesejaContinuar += char
+	desejaContinuar = inputDesejaContinuar.upper()
 	if desejaContinuar == "S":
-		diaInicio = int(input("Digite o dia de inicio : ").strip())
+		#diaInicio = int(input("Digite o dia de inicio : ").strip())
+		print("\nDigite o dia de inicio : ", end="", flush=True)
+		inputDiaInicio = ""
+		while len(inputDiaInicio) < 2:
+			char = msvcrt.getwch()
+			print(char, end="", flush=True)
+			inputDiaInicio += char
+		diaInicio = int(inputDiaInicio)
 	else:
 		diaInicio = 1
 	
@@ -74,11 +93,20 @@ if sheetNome in nome_planilhas:
 		# 分別為 上班時間, 吃飯時間, 吃飯回來時間, 下班時間
 		# lista = ['B', 'C', 'D', 'E']
 		campo = 'A' + str(linha)
-		print(Fore.YELLOW + f"Dia : {sh[campo].value}" + Fore.RESET)
+		print(Fore.YELLOW + f"\nDia : {sh[campo].value}" + Fore.RESET)
 		print("**Entrada")
 		# 進來時間 (小時) 
 		while True: 
-			horas_entrada = input("Horas : ").strip()
+			#horas_entrada = input("Horas : ").strip()
+			print("Horas: ", end="", flush=True)
+			input_horas_entrada = ""
+			while len(input_horas_entrada) < 2:
+				char = msvcrt.getwch()
+				if char == "\x1b":
+					exit()
+				print(char, end="", flush=True)
+				input_horas_entrada += char
+			horas_entrada = input_horas_entrada
 			if horas_entrada.isnumeric():
 				if int(horas_entrada) >= 0 and int(horas_entrada) <= 100:
 					break
@@ -88,7 +116,16 @@ if sheetNome in nome_planilhas:
 				print(Fore.RED + "Erro!" + Fore.RESET)
 		# 進來時間 (分鐘) 
 		while True:
-			minutos_entrada = input("Minutos : ").strip()
+			#minutos_entrada = input("Minutos : ").strip()
+			print("\nMinutos: ", end="", flush=True)
+			input_minutos_entrada = ""
+			while len(input_minutos_entrada) < 2:
+				char = msvcrt.getwch()
+				if char == "\x1b":
+					exit()
+				print(char, end="", flush=True)
+				input_minutos_entrada += char
+			minutos_entrada = input_minutos_entrada
 			if minutos_entrada.isnumeric():
 				if int(minutos_entrada) >= 0 and int(minutos_entrada) <= 100:
 					break
@@ -96,10 +133,19 @@ if sheetNome in nome_planilhas:
 					print(Fore.RED + "Erro!" + Fore.RESET)
 			else:
 				print(Fore.RED + "Erro!" + Fore.RESET)
-		print("**Almoço")
+		print("\n\n**Almoço")
 		# 吃飯時間 (小時)
 		while True:
-			horas_saida_almoco = input("Horas : ").strip()
+			#horas_saida_almoco = input("Horas : ").strip()
+			print("\nHoras : ", end="", flush=True)
+			input_horas_saida_almoco = ""
+			while len(input_horas_saida_almoco) < 2:
+				char = msvcrt.getwch()
+				if char == "\x1b":
+					exit()
+				print(char, end="", flush=True)
+				input_horas_saida_almoco += char
+			horas_saida_almoco = input_horas_saida_almoco
 			if horas_saida_almoco.isnumeric():
 				if int(horas_saida_almoco) >= 0 and int(horas_saida_almoco) <= 100:
 					break
@@ -109,7 +155,16 @@ if sheetNome in nome_planilhas:
 				print(Fore.RED + "Erro!" + Fore.RESET)
 		# 吃飯時間 (分鐘) 
 		while True:
-			minutos_saida_almoco = input("Minutos : ").strip()
+			#minutos_saida_almoco = input("Minutos : ").strip()
+			print("\nMinutos : ", end="", flush=True)
+			input_minutos_saida_almoco = ""
+			while len(input_minutos_saida_almoco) < 2:
+				char = msvcrt.getwch()
+				if char == "\x1b":
+					exit()
+				print(char, end="", flush=True)
+				input_minutos_saida_almoco += char
+			minutos_saida_almoco = input_minutos_saida_almoco
 			if minutos_saida_almoco.isnumeric():
 				if int(minutos_saida_almoco) >= 0 and int(minutos_saida_almoco) <= 100:
 					break
@@ -117,10 +172,19 @@ if sheetNome in nome_planilhas:
 					print(Fore.RED + "Erro!" + Fore.RESET)
 			else:
 				print(Fore.RED + "Erro!" + Fore.RESET)
-		print("**Volta almoço")
+		print("\n\n**Volta almoço")
 		# 吃飯回來時間 (小時)
 		while True:
-			horas_volta_almoco = input("Horas : ").strip()
+			#horas_volta_almoco = input("Horas : ").strip()
+			print("\nHoras : ", end="", flush=True)
+			input_horas_volta_almoco = ""
+			while len(input_horas_volta_almoco) < 2 :
+				char = msvcrt.getwch()
+				if char == "\x1b":
+					exit()
+				print(char, end="", flush=True)
+				input_horas_volta_almoco += char
+			horas_volta_almoco = input_horas_volta_almoco
 			if horas_volta_almoco.isnumeric():
 				if int(horas_volta_almoco) >= 0 and int(horas_volta_almoco) <= 100:
 					break
@@ -130,7 +194,16 @@ if sheetNome in nome_planilhas:
 				print(Fore.RED + "Erro!" + Fore.RESET)
 		# 吃飯回來時間 (分鐘) 
 		while True:
-			minutos_volta_almoco = input("Minutos : ").strip()
+			#minutos_volta_almoco = input("Minutos : ").strip()
+			print("\nMinutos : ", end="", flush=True)
+			input_minutos_volta_almoco = ""
+			while len(input_minutos_volta_almoco) < 2 :
+				char = msvcrt.getwch()
+				if char == "\x1b":
+					exit()
+				print(char, end="", flush=True)
+				input_minutos_volta_almoco += char
+			minutos_volta_almoco = input_minutos_volta_almoco
 			if minutos_volta_almoco.isnumeric():
 				if int(minutos_volta_almoco) >= 0 and int(minutos_volta_almoco) <= 100:
 					break
@@ -138,10 +211,19 @@ if sheetNome in nome_planilhas:
 					print(Fore.RED + "Erro!" + Fore.RESET)
 			else:
 				print(Fore.RED + "Erro!" + Fore.RESET)
-		print("**Saída")
+		print("\n\n**Saída")
 		# 下班時間 (小時) 
 		while True:
-			horas_saida = input("Horas : ").strip()
+			#horas_saida = input("Horas : ").strip()
+			print("\nHoras : ", end="", flush=True)
+			input_horas_saida = ""
+			while len(input_horas_saida) < 2 :
+				char = msvcrt.getwch()
+				if char == "\x1b":
+					exit()
+				print(char, end="", flush=True)
+				input_horas_saida += char
+			horas_saida = input_horas_saida
 			if horas_saida.isnumeric():
 				if int(horas_saida) >= 0 and int(horas_saida) <= 100:
 					break
@@ -151,7 +233,16 @@ if sheetNome in nome_planilhas:
 				print(Fore.RED + "Erro!" + Fore.RESET)
 		# 下班時間 (分鐘)
 		while True:
-			minutos_saida = input("Minutos : ").strip()
+			#minutos_saida = input("Minutos : ").strip()
+			print("\nMinutos : ", end="", flush=True)
+			input_minutos_saida = ""
+			while len(input_minutos_saida) < 2 :
+				char = msvcrt.getwch()
+				if char == "\x1b":
+					exit()
+				print(char, end="", flush=True)
+				input_minutos_saida += char
+			minutos_saida = input_minutos_saida
 			if minutos_saida.isnumeric():
 				if int(minutos_saida) >= 0 and int(minutos_saida) <= 100:
 					break
@@ -161,7 +252,7 @@ if sheetNome in nome_planilhas:
 				print(Fore.RED + "Erro!" + Fore.RESET)
 
 		# 顯示所寫的時間
-		print(Fore.GREEN + f"Voce digitou: [ENTRADA: {horas_entrada}:{minutos_entrada}], [ALMOÇO: {horas_saida_almoco}:{minutos_saida_almoco}], [VOLTA ALMOCO: {horas_volta_almoco}:{minutos_volta_almoco}], [SAÍDA: {horas_saida}:{minutos_saida}]" + Fore.RESET)
+		print(Fore.GREEN + f"\n\nVoce digitou: [ENTRADA: {horas_entrada}:{minutos_entrada}], [ALMOÇO: {horas_saida_almoco}:{minutos_saida_almoco}], [VOLTA ALMOCO: {horas_volta_almoco}:{minutos_volta_almoco}], [SAÍDA: {horas_saida}:{minutos_saida}]" + Fore.RESET)
 
 		# 多少的吃飯時間 (分鐘)
 		tempo_de_almoco = (int(horas_volta_almoco) * 60 + int(minutos_volta_almoco)) - (int(horas_saida_almoco) * 60 + int(minutos_saida_almoco))
@@ -169,7 +260,16 @@ if sheetNome in nome_planilhas:
 
 		# 如果想要save請按 '1'
 		while True:
-			desejaSalvar = input("Deseja salvar o horário? (Sim 1/Nao 0) ").upper().strip()
+			#desejaSalvar = input("Deseja salvar o horário? (Sim 1/Nao 0) ").upper().strip()
+			print("\nDeseja salvar o horário? (Sim 1/Nao 0) ", end="", flush=True)
+			desejaSalvar = ""
+			while len(desejaSalvar) < 1 :
+				char = msvcrt.getwch()
+				if char == "\x1b":
+					exit()
+				print(char, end="", flush=True)
+				desejaSalvar += char
+			
 			if desejaSalvar == "1" or desejaSalvar == "0":
 				break
 			else:
